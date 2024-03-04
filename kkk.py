@@ -115,12 +115,11 @@ def eliminarMascota(self, historia):
 def agragarMedicamento(lista_med,nombre_medicamento,dosis):
     for m in lista_med:
         if m.verNombre() == nombre_medicamento:
-            print("este medicamento ya esta en la lista. no se agregara nuevamente.")
             return True
-    Medicamento = Medicamento()
-    Medicamento.asignarNombre(nombre_medicamento)
-    Medicamento.asignarDosis(dosis)
-    lista_med.append(Medicamento)
+    Medicamentos = Medicamento()
+    Medicamentos.asignarNombre(nombre_medicamento)
+    Medicamentos.asignarDosis(dosis)
+    lista_med.append(Medicamentos)
 
 
 
@@ -155,10 +154,11 @@ def main():
                     nombre_medicamentos = input("Ingrese el nombre del medicamento: ")
                     dosis =int(input("Ingrese la dosis: "))
                     if agragarMedicamento(lista_med, nombre_medicamentos, dosis):
-                        nombre_medicamentos = input("Ingrese el nombre del medicamento: ")
-                        nm - 1
+                        print("este medicamento ya esta en la lista. no se agregara nuevamente.")
+
                     else:
                         agragarMedicamento(lista_med, nombre_medicamentos, dosis)
+                        print("Agregado")
                     mas= Mascota()
                     mas.asignarNombre(nombre)
                     mas.asignarHistoria(historia)
