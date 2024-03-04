@@ -218,6 +218,8 @@ def main():
         else:
             print("Usted ingresó una opción no válida, intentelo nuevamente...")
 
+        h= 0
+
 if __name__=='__main__':
     main()
 
