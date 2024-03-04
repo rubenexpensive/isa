@@ -82,6 +82,8 @@ class sistemaV:
             if historia == masc.verHistoria():
                 return masc.verFecha()
 
+
+    
     def verMedicamento(self,historia):
 
         for masc in self.__lista_canino:
@@ -146,6 +148,7 @@ def main():
                 tipo=input("Ingrese el tipo de mascota (felino o canino): ")
                 peso=int(input("Ingrese el peso de la mascota: "))
                 fecha=input("Ingrese la fecha de ingreso (dia/mes/año): ")
+                fecha= datetime.strptime(fecha, "%d/%m/%Y")
                 nm=int(input("Ingrese cantidad de medicamentos: "))
                 lista_med=[]
                 
@@ -164,7 +167,7 @@ def main():
                     mas.asignarHistoria(historia)
                     mas.asignarPeso(peso)
                     mas.asignarTipo(tipo)
-                    mas.asignarFecha(fecha)
+                    mas.asignarFecha(fecha.date())
                     mas.asignarLista_Medicamentos(lista_med)
                     servicio_hospitalario.ingresarMascota(mas,tipo)
 
